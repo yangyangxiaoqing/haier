@@ -1,0 +1,313 @@
+@charset "utf-8";
+@import "public";
+
+//小的宽度
+$newwidth: 1200px;
+//大的宽度
+$width: 1680px;
+$maincol: #005aaa;
+
+@mixin box($width: 100%, $height: 100%, $background: #fff) {
+  width: $width;
+  height: $height;
+  background: $background;
+}
+@mixin font($fs: 16px, $fw: normal, $c: #000) {
+  font-size: $fs;
+  font-weight: $fw;
+  color: $c;
+}
+@mixin position($pos: relative, $t: 0px) {
+  position: $pos;
+  top: $t;
+}
+
+%flexbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+%h2 {
+  height: 40px;
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: bolder;
+  color: #000;
+  text-align: center;
+}
+%bg {
+  width: 1680px;
+  height: 540px;
+  background: #f6f7f9;
+  position: absolute;
+  left: -240px;
+  z-index: -1;
+}
+%span {
+  font-size: 18px;
+  line-height: 18px;
+  height: 18px;
+  color: #000;
+}
+%i {
+  font-size: 14px;
+  line-height: 14px;
+  height: 14px;
+  color: #555555;
+  margin-top: 15px;
+}
+
+@import "nav";
+.headerWrap {
+  width: 100%;
+  height: 590px;
+  .header {
+    width: $newwidth;
+    @include box($newwidth, 100%);
+    margin: auto;
+    position: relative;
+    .image {
+      @include box(1680px, 100%);
+      background: url(https://image.haier.com/cn/freezer/W020190917618291345156.png)  
+        no-repeat center center;
+      position: absolute;
+      background-size: 100%;
+      left: -240px;
+    }
+    h2 {
+      display: block;
+      position: absolute;
+      @include box(500px, 80px, transparent);
+      @include font(80px, bolder, #111);
+      top: 150px;
+      left: 50px;
+    }
+    span {
+      display: block;
+      position: absolute;
+      @include box(500px, 80px, transparent);
+      @include font(24px, normal, #111);
+      top: 380px;
+      left: 50px;
+    }
+  }
+}
+
+.mainwrap {
+  width: 100%;
+  .main {
+    width: $newwidth;
+    margin: auto;
+    .index {
+      @include box(100%, 60px);
+      a {
+        display: inline-block;
+        @include box(63px, 60px);
+        line-height: 60px;
+        text-align: center;
+        @include font(14px, normal, #111);
+      }
+    }
+
+    .head {
+      @include box(100%, 64px);
+      display: flex;
+      span {
+        @include box(75px, 64px, transparent);
+        @include font(20px, normal, #000);
+        line-height: 64px;
+        text-align: center;
+        border-left: 4px solid $maincol;
+      }
+      p {
+        line-height: 64px;
+        @include font(12px, normal, #4f4949);
+      }
+      border-top: 1px solid #eee;
+      background: #fafafa;
+    }
+
+    .select {
+      dl {
+        @include font(12px, normal, #4f4949);
+        @include box(100%, 39px);
+        border-bottom: 1px solid #eee;
+        display: flex;
+        span {
+          @include box(160px, 100%);
+          line-height: 39px;
+        }
+        ul {
+          display: flex;
+          li {
+            padding: 0 20px;
+            line-height: 39px;
+          }
+        }
+      }
+      .fliter {
+        margin-top: 10px;
+        display: flex;
+        ul {
+          display: flex;
+          li {
+            @include box(100px, 40px);
+            border: 1px solid #eee;
+            line-height: 40px;
+            text-align: center;
+          }
+        }
+
+        span {
+          line-height: 40px;
+          border: 1px solid #eee;
+          padding-left: 20px;
+          border-right: none;
+          a {
+            @include box(73px, 24px);
+            border: 1px solid #eee;
+            @include font(12px, normal, #4f4949);
+          }
+        }
+        form {
+          line-height: 40px;
+          border: 1px solid #eee;
+          border-left: none;
+          padding-left: 350px;
+          @include font(14px, normal, #4f4949);
+          label {
+            padding: 10px;
+          }
+        }
+      }
+    }
+    .list {
+      width: 100%;
+      ul {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        li {
+          @include box(256px, 450px);
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: center;
+        }
+        li img {
+          @include box(229px, 229px);
+        }
+        p {
+          @extend %span;
+        }
+        i {
+          @extend %i;
+        }
+        em {
+          @include font(10px, normal, #494949);
+        }
+      }
+
+      //分页
+      .pagelist {
+        clear: both;
+        width: 1200px;
+        height: 100px;
+        margin: 0 auto;
+        text-align: right;
+        padding-right: 20px;
+      }
+      .m-style {
+        float: right;
+        text-align: center;
+      }
+
+      .m-style:before,
+      .m-style:after {
+        content: "";
+        display: table;
+      }
+
+      .m-style:after {
+        clear: both;
+        overflow: hidden;
+      }
+
+      .m-style span {
+        float: left;
+        margin: 0 5px;
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+        color: #bdbdbd;
+        font-size: 14px;
+      }
+
+      .m-style .active {
+        float: left;
+        margin: 0 5px;
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+        background: #e91e63;
+        color: #fff;
+        font-size: 14px;
+        border: 1px solid #e91e63;
+      }
+
+      .m-style a {
+        float: left;
+        margin: 0 5px;
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+        background: #fff;
+        border: 1px solid #ebebeb;
+        color: #bdbdbd;
+        font-size: 14px;
+      }
+
+      .m-style a:hover {
+        color: #fff;
+        background: #e91e63;
+      }
+
+      .m-style .next,
+      .m-style .prev {
+        font-family: "Simsun";
+        font-size: 16px;
+        font-weight: bold;
+        width: 80px;
+      }
+
+      .now,
+      .count {
+        padding: 0 5px;
+        color: #f00;
+      }
+
+      .eg img {
+        max-width: 800px;
+        min-height: 500px;
+      }
+
+      input {
+        float: left;
+        margin: 0 5px;
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+        text-align: center;
+        background: #fff;
+        border: 1px solid #ebebeb;
+        outline: none;
+        color: #bdbdbd;
+        font-size: 14px;
+      }
+    }
+  }
+}
+@import "bottom";
+@import "footer";

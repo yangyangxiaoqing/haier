@@ -1,0 +1,38 @@
+.bottomWrap {
+    height: 369px;
+      .bottom {
+        @include box($newwidth, 100%,transparent);
+        margin: auto;
+        @include position();
+        .bg {
+          @extend %bg;
+          height: 100%;
+        }
+        ul {
+          padding: 0;
+          height: 368px;
+          display: flex;
+          border-bottom: 1px solid #c8c8c8;
+          li {
+            @include box(200px, 100%,transparent);
+            text-align: left;
+            
+          }
+          em {
+            display: block;
+            @include font(12px, bolder);
+            @include box(100%, 50px, transparent);
+            margin-top: 12px;
+          }
+  
+          i {
+            display: block;
+            @include box(100%, 26px, transparent);
+          }
+          a{
+            @include font(12px, normal, #5a5a5a);
+            line-height: 24px;
+          }
+        }
+      }
+    }

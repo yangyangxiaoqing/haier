@@ -1,0 +1,446 @@
+@charset "UTF-8";
+html, body, ol, ul, li, h1, h2, h3, h4, h5, h6, p, th, td, dl, dt, dd, form, fieldset, legend, input, textarea, select {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: '微软雅黑';
+  overflow-x: hidden;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+b, strong {
+  font-weight: normal;
+}
+
+i, em {
+  font-style: normal;
+}
+
+a, u, ins {
+  text-decoration: none;
+}
+
+img {
+  border: 0;
+  display: block;
+}
+
+input, fieldset {
+  outline: none;
+  border: 0;
+}
+
+.clear_fix:after {
+  content: '.';
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  display: block;
+  visibility: hidden;
+}
+
+.clear_fix {
+  zoom: 1;
+}
+
+.navWrap {
+  height: 71px;
+}
+.navWrap .nav {
+  width: 1200px;
+  height: 70px;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  margin: auto;
+}
+.navWrap .nav h1 {
+  float: left;
+  width: 165px;
+  height: 70px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+.navWrap .nav h1 img {
+  width: 85px;
+  height: 26px;
+  background: #fff;
+}
+.navWrap .nav ul {
+  width: 605px;
+  height: 70px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 120px;
+}
+.navWrap .nav ul li {
+  padding: 0 26px;
+  height: 100%;
+  position: relative;
+}
+.navWrap .nav ul li > a {
+  display: block;
+  font-size: 13px;
+  font-weight: bolder;
+  color: #000;
+  height: 100%;
+  line-height: 70px;
+}
+.navWrap .nav ul .menu1 {
+  z-index: 2;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  background: red;
+  border-top: 6px solid #005aaa;
+  display: none;
+}
+.navWrap .nav ul .menu1 a {
+  height: 50px;
+  line-height: 50px;
+  padding-left: 20px;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: normal;
+  color: #444;
+}
+.navWrap .nav ul .detail {
+  display: none;
+  z-index: 2;
+  background: white;
+  position: absolute;
+  top: 64px;
+  left: 0;
+}
+.navWrap .nav ul .detail .dleft a {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 20px;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: normal;
+  color: #444;
+}
+.navWrap .nav ul .active {
+  background: #999;
+}
+.navWrap .nav ul .detail > .dleft {
+  border-top: 6px solid #005aaa;
+}
+.navWrap .nav ul .dright {
+  display: none;
+  z-index: 2;
+  width: 600px;
+  height: 450px;
+  background: #fff;
+  position: absolute;
+  left: 143px;
+}
+.navWrap .nav ul .dright .item {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.navWrap .nav ul .dright div em {
+  display: block;
+  width: 600px;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 20px;
+}
+.navWrap .nav ul .dright div a {
+  display: inline-block;
+  width: 120px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #444;
+}
+.navWrap .nav ul .dright div:nth-child(3) {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+.navWrap .nav ul .dright div:nth-child(3) img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.navWrap .nav ul .dright div:nth-child(3) i {
+  display: block;
+  font-size: 30px;
+  font-weight: bolder;
+  color: #111;
+  position: absolute;
+  top: 50px;
+  right: 30px;
+}
+.navWrap .nav ul .dright div:nth-child(3) strong {
+  font-size: 18px;
+  font-weight: normal;
+  color: #555;
+  position: absolute;
+  right: 70px;
+  top: 100px;
+}
+.navWrap .nav ul .dright div:nth-child(3) span {
+  position: absolute;
+  font-size: 14px;
+  font-weight: normal;
+  color: #005aaa;
+  right: 70px;
+  top: 140px;
+  width: 90px;
+  height: 30px;
+  background: #fff;
+  border: 1px solid #005aaa;
+  line-height: 30px;
+  border-radius: 15px;
+  text-align: center;
+}
+.navWrap .nav div.search {
+  width: 270px;
+  height: 100%;
+  background: #fff;
+  margin-left: 30px;
+  float: left;
+  display: flex;
+  align-items: center;
+}
+.navWrap .nav div.search span {
+  width: 44px;
+  height: 38px;
+  background: red;
+}
+.navWrap .nav div.search input:nth-child(1) {
+  width: 177px;
+  height: 38px;
+  background: #fafafa;
+}
+.navWrap .nav div.search input:nth-child(2) {
+  width: 38px;
+  height: 38px;
+  background: #fafafa;
+}
+
+.detailWrap {
+  width: 100%;
+  background: #f0f1f4;
+}
+.detailWrap .detail {
+  width: 1200px;
+  height: 687px;
+  background: transparent;
+  margin: auto;
+}
+.detailWrap .detail .top {
+  height: 62px;
+  line-height: 62px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #444;
+}
+.detailWrap .detail .top a {
+  font-size: 12px;
+  font-weight: normal;
+  color: #444;
+}
+.detailWrap .detail .goodsinfo {
+  width: 1200px;
+  height: 600px;
+  background: transparent;
+  float: left;
+  position: relative;
+  padding-top: 25px;
+}
+.detailWrap .detail .goodsinfo .wrap {
+  float: left;
+  position: relative;
+}
+.detailWrap .detail .goodsinfo .wrap #spic {
+  width: 444px;
+  height: 444px;
+  background: #fff;
+  border: 1px solid #000;
+  float: left;
+  position: relative;
+}
+.detailWrap .detail .goodsinfo .wrap #spic #smallpic {
+  width: 444px;
+  height: 444px;
+  background: #fff;
+}
+.detailWrap .detail .goodsinfo .wrap #spic #sf {
+  width: 148px;
+  height: 148px;
+  background: #fff;
+  background: orange;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  z-index: 10;
+  pointer-events: none;
+}
+.detailWrap .detail .goodsinfo .wrap #bf {
+  width: 444px;
+  height: 444px;
+  background: #fff;
+  border: 1px solid #000;
+  overflow: hidden;
+  position: absolute;
+  left: 456px;
+  visibility: hidden;
+  z-index: 100;
+}
+.detailWrap .detail .goodsinfo .wrap #bf #bpic {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: #fff;
+}
+.detailWrap .detail .goodsinfo .wrap #ulist {
+  position: absolute;
+  top: 460px;
+  width: 438px;
+  height: 64px;
+  background: #fff;
+  display: flex;
+}
+.detailWrap .detail .goodsinfo .wrap #ulist a {
+  float: left;
+  width: 10px;
+  height: 62px;
+  background: #fff;
+  border: 1px solid #ccc;
+  line-height: 62px;
+  text-align: center;
+}
+.detailWrap .detail .goodsinfo .wrap #ulist #left {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+.detailWrap .detail .goodsinfo .wrap #ulist #list {
+  float: left;
+  width: 400px;
+  height: 64px;
+  position: relative;
+  overflow: hidden;
+  margin-left: 12px;
+}
+.detailWrap .detail .goodsinfo .wrap #ulist #list ul {
+  list-style: none;
+  float: left;
+  position: absolute;
+  top: 0px;
+  width: 700px;
+}
+.detailWrap .detail .goodsinfo .wrap #ulist #list li {
+  float: left;
+  width: 62px;
+  height: 62px;
+  margin-left: 15px;
+}
+.detailWrap .detail .goodsinfo .wrap #ulist #list img {
+  width: 62px;
+  height: 62px;
+}
+.detailWrap .detail .goodsinfo .wrap #ulist #right {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: #333;
+}
+.detailWrap .detail .goodsinfo .goodsinfo-word {
+  overflow: hidden;
+  float: left;
+  position: relative;
+  width: 754px;
+}
+.detailWrap .detail .goodsinfo .goodsinfo-word h2 {
+  position: absolute;
+  top: 80px;
+  left: 290px;
+  font-size: 34px;
+  font-weight: bolder;
+  color: #000;
+}
+.detailWrap .detail .goodsinfo .goodsinfo-word h5 {
+  font-size: 16px;
+  font-weight: normal;
+  color: #444444;
+  position: absolute;
+  top: 140px;
+  left: 290px;
+}
+.detailWrap .detail .goodsinfo .goodsinfo-word .price {
+  position: absolute;
+  top: 270px;
+  left: 290px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #111;
+}
+.detailWrap .detail .goodsinfo .goodsinfo-word .price span {
+  font-size: 26px;
+  font-weight: border;
+  color: #000;
+}
+.detailWrap .detail .goodsinfo .goodsinfo-word p {
+  font-size: 14px;
+  font-weight: normal;
+  color: #88888b;
+  margin-top: 305px;
+  margin-left: 290px;
+}
+.detailWrap .detail .goodsinfo .goodsinfo-word div .count {
+  margin-left: 240px;
+  width: 50px;
+  height: 40px;
+  padding-left: 10px;
+}
+.detailWrap .detail .goodsinfo .goodsinfo-word div .buy {
+  display: inline-block;
+  width: 200px;
+  height: 48px;
+  background: #0c5ca8;
+  line-height: 48px;
+  text-align: center;
+  color: #fff;
+  border-radius: 48px;
+  margin-left: 10px;
+}
+.detailWrap .detail .goodsinfo .goodsinfo-word div span {
+  margin-top: 75px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #555555;
+}
+.detailWrap .detail .goodsinfo .goodsinfo-word .check {
+  font-size: 16px;
+  font-weight: normal;
+  color: #0c5ca8;
+  width: 200px;
+  text-align: center;
+  margin-left: 290px;
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=detail.css.map */

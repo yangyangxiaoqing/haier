@@ -1,0 +1,154 @@
+.navWrap {
+  height: 71px;
+  .nav {
+    @include box($newwidth,70px);
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    margin: auto;
+    h1 {
+      float: left;
+      @include box(165px,70px);
+      display: flex;
+      align-items: center;
+        img {
+          @include box(85px,26px);
+        }
+    }
+    ul {
+      @include box(605px,70px);
+      
+      display: flex;
+      justify-content: space-between;
+      padding-right: 120px;
+      li {
+        padding: 0 26px;
+        height:100%;
+        position: relative;
+        
+      }
+      li>a{
+        display: block;
+        @include font(13px,bolder,#000);
+        height: 100%;
+        line-height: 70px;
+      }
+      .menu1{
+        z-index: 2;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        background: red;
+        border-top: 6px solid $maincol;
+        display: none;
+      }
+      .menu1 a{
+        height: 50px;
+        line-height: 50px;
+        padding-left: 20px;
+        display: inline-block;
+        @include font(13px,normal,#444);
+      }
+      .detail{
+        display: none;
+        z-index: 2;
+        background: white;
+        position: absolute;
+        top: 64px;
+        left: 0;
+      }
+      .detail .dleft a{
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        padding-left: 20px;
+        display: inline-block;
+        @include font(13px,normal,#444);
+      }
+      .active{
+        background: #999;
+      }
+      .detail>.dleft{
+        border-top: 6px solid $maincol;
+      }
+      
+      .dright{
+        display: none;
+        z-index: 2;
+        @include box(600px,450px);
+        position: absolute;
+        left: 143px;
+      }
+      .dright .item{
+        @include box(100%,100%);
+        // height: 100%;
+        // width: 100%;
+      }
+      .dright div em{
+        display: block;
+        width: 600px;
+        height: 50px;
+        line-height: 50px;
+        padding-left: 20px;
+      }
+      .dright div a{
+        display: inline-block;
+        width: 120px;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        @include font(12px,normal,#444);
+      }
+      .dright div:nth-child(3){
+        width: 100%;
+        height: 200px;
+        position: relative;
+      }
+      .dright div:nth-child(3) img{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+      .dright div:nth-child(3) i{
+        display: block;
+        @include font(30px,bolder,#111);
+        position: absolute;
+        top: 50px;
+        right: 30px;
+      }
+      .dright div:nth-child(3) strong{
+        @include font(18px,normal,#555);
+        position: absolute;
+        right: 70px;
+        top: 100px;
+      }
+      .dright div:nth-child(3) span{
+        position: absolute;
+        @include font(14px,normal,$maincol);
+        right: 70px;
+        top: 140px;
+        @include box(90px,30px);
+        border: 1px solid $maincol;
+        line-height: 30px;
+        border-radius: 15px;
+        text-align: center;
+      }
+    }
+    
+    div.search {
+      @include box(270px,100%);
+      margin-left: 30px;
+      float: left;
+      display: flex;
+      align-items: center;
+      span {
+        @include box(44px,38px,red);
+      }
+      input:nth-child(1){
+        @include box(177px,38px,#fafafa);
+      }
+      input:nth-child(2){
+        @include box(38px,38px,#fafafa);
+      }
+    }
+  }
+}

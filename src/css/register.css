@@ -1,0 +1,259 @@
+@charset "UTF-8";
+html, body, ol, ul, li, h1, h2, h3, h4, h5, h6, p, th, td, dl, dt, dd, form, fieldset, legend, input, textarea, select {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: '微软雅黑';
+  overflow-x: hidden;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+b, strong {
+  font-weight: normal;
+}
+
+i, em {
+  font-style: normal;
+}
+
+a, u, ins {
+  text-decoration: none;
+}
+
+img {
+  border: 0;
+  display: block;
+}
+
+input, fieldset {
+  outline: none;
+  border: 0;
+}
+
+.clear_fix:after {
+  content: '.';
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  display: block;
+  visibility: hidden;
+}
+
+.clear_fix {
+  zoom: 1;
+}
+
+.footerWrap .footer .bg {
+  width: 1680px;
+  height: 540px;
+  background: #f6f7f9;
+  position: absolute;
+  left: -240px;
+  z-index: -1;
+}
+
+.headerWrap {
+  width: 100%;
+  height: 60px;
+  background: #fff;
+}
+.headerWrap .header {
+  width: 1200px;
+  height: 60px;
+  background: #fff;
+  margin: auto;
+  display: flex;
+  font-size: 14px;
+  font-weight: normal;
+  color: #333333;
+}
+.headerWrap .header .logo {
+  line-height: 60px;
+  width: 120px;
+  height: 60px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+.headerWrap .header .logo img {
+  width: 70px;
+  height: 20px;
+  background: #fff;
+}
+.headerWrap .header .register {
+  line-height: 60px;
+}
+.headerWrap .header .login {
+  margin-left: 850px;
+  width: 130px;
+  height: 16px;
+  background: #fff;
+  text-align: center;
+  margin-top: 22px;
+}
+
+.bannerWrap {
+  width: 100%;
+  height: 787px;
+  background: #fff;
+}
+.bannerWrap .banner {
+  width: 1200px;
+  height: 787px;
+  background: #fff;
+  margin: auto;
+  position: relative;
+}
+.bannerWrap .banner .bg {
+  width: 1680px;
+  height: 787px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: -240px;
+  background: url(https://user.haier.com/cn/images/vipuser_zhuce_bg3.jpg) no-repeat center center;
+}
+.bannerWrap .banner h2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: transparent;
+  font-size: 28px;
+  font-weight: normal;
+  color: #000;
+  line-height: 150px;
+  text-align: center;
+}
+.bannerWrap .banner .mainbox {
+  width: 840px;
+  height: 480px;
+  background: #fff;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.bannerWrap .banner .mainbox label {
+  width: 680px;
+  height: 38px;
+  background: #fff;
+  display: flex;
+  padding-left: 160px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #666666;
+  line-height: 38px;
+  margin: 20px 0px;
+}
+.bannerWrap .banner .mainbox .tel,
+.bannerWrap .banner .mainbox .pass,
+.bannerWrap .banner .mainbox .yzm {
+  width: 358px;
+  height: 38px;
+  background: #fff;
+  border: 1px solid #d6dbdd;
+  font-size: 12px;
+  font-weight: normal;
+  color: #999999;
+  padding-left: 20px;
+}
+.bannerWrap .banner .mainbox .reminder {
+  display: block;
+  color: red;
+  margin-left: 220px;
+  padding-left: 20px;
+}
+.bannerWrap .banner .mainbox p {
+  width: 470px;
+  height: 50px;
+  background: #fff;
+  line-height: 50px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #999999;
+  padding-left: 210px;
+}
+.bannerWrap .banner .mainbox .agree {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 1px solid #d6dbdd;
+  font-size: 12px;
+  font-weight: normal;
+  color: #999999;
+}
+.bannerWrap .banner .mainbox .btn {
+  margin-left: 60px;
+  width: 358px;
+  height: 48px;
+  background: #fff;
+  background: #c6cacb;
+  color: #fff;
+}
+.bannerWrap .banner h3 {
+  position: absolute;
+  top: 630px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  height: 104px;
+  background: transparent;
+  line-height: 104px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #333;
+}
+
+.footerWrap {
+  width: 100%;
+}
+.footerWrap .footer {
+  width: 1200px;
+  height: 57px;
+  background: transparent;
+  margin: auto;
+  position: relative;
+  display: flex;
+  font-size: 10px;
+  font-weight: normal;
+  color: #494f5a;
+}
+.footerWrap .footer .bg {
+  height: 57px;
+}
+.footerWrap .footer a, .footerWrap .footer i, .footerWrap .footer strong {
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 10px;
+  font-weight: normal;
+  color: #494f5a;
+  line-height: 57px;
+  text-align: center;
+}
+.footerWrap .footer p {
+  margin-left: 30px;
+  margin-right: 50px;
+}
+
+.footerWrap {
+  background-color: black;
+}
+
+/*# sourceMappingURL=register.css.map */

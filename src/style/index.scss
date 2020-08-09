@@ -1,0 +1,390 @@
+@charset "utf-8";
+//小的宽度
+$newwidth:1200px;
+//大的宽度
+$width:1680px;
+$maincol:#005aaa;
+
+@mixin box($width:100%, $height:100%, $background:#fff) {
+    width: $width;
+    height: $height;
+    background: $background;
+};
+@mixin font($fs:16px,$fw:normal,$c:#000){
+    font-size: $fs;
+    font-weight: $fw;
+    color: $c;
+}
+@mixin position($pos:relative,$t:0px){
+    position:$pos;
+    top: $t;
+}
+
+%flexbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+%h2 {
+    height: 40px;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: bolder;
+    color: #000;
+    text-align: center;
+}
+%bg{
+    width: 1680px;
+    height: 540px;
+    background: #f6f7f9;
+    position: absolute;
+    left: -240px;
+    z-index: -1;
+}
+%span{
+    font-size: 18px;
+    line-height: 18px;
+    height: 18px;
+    color: #000;
+}
+%i{
+    font-size: 14px;
+    line-height: 14px;
+    height: 14px;
+    color: #555555;
+    margin-top: 15px;
+}
+
+.headerWrap {
+    height: 560px;
+    div.header {
+        @include box($newwidth,100%);
+        margin: auto;
+        position: relative;
+      ul {
+        @include box($width,100%);
+        position: relative;
+        top: 0;
+        left: -240px;
+        li {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        // https://images.weserv.nl/?url=
+        .image1{
+          background: url(https://images.weserv.nl/?url=https://image.haier.com/cn/W020200525366821348658.jpg) no-repeat center center;
+        }
+        .image2{
+          background: url(https://image.haier.com/cn/W020200219351409559492.jpg) no-repeat center center;
+        }
+        .image3{
+          background: url(https://image.haier.com/cn/W020200729342361823305.jpg) no-repeat center center;
+        }
+        .image4{
+          background: url(https://image.haier.com/cn/W020200513531124599697.jpg) no-repeat center center;
+        }
+        .image5{
+          background: url(https://image.haier.com/cn/W020200701514765195733.jpg) no-repeat center center;
+        }
+        
+      } 
+      ol{
+        float: left;
+        display: flex;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        margin-left: -110px;
+        font-size: 0px;
+        li{
+          margin-left: 20px;
+          @include box(20px, 20px);
+          border-radius: 50%;
+        }
+        .active{
+          background: orange;
+        }
+      }
+      span{
+        @include box(60px,60px);
+        @include position(absolute,50%);
+        line-height: 60px;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 0;
+        margin-top: -30px;
+      }
+      span.leftbtn {
+        left: 80px;
+      }
+      span.rightbtn {
+        right: 80px;
+      }
+    }
+  }
+
+.boutiWrap {
+    height: 968px;
+    .bouti {
+        @include box($newwidth,100%);
+        @include position();
+        margin: auto;
+      h2 {
+        @extend %h2;
+        margin-bottom: 40px;
+        padding-top: 56px;
+      }
+      ul {
+        @include box($newwidth,40px);  
+        margin: auto;
+        border-bottom: 1px solid #d8d8d8;
+        display: flex;
+        li {
+            @include box(200px,40px);
+            line-height: 40px;
+            text-align: center;
+            @include font(18px,normal,#444);
+        }
+      }
+  
+      .bg {
+        @extend %bg;
+        top: 428px;
+      }
+      
+    .images {
+        @include box($newwidth,648px);
+        @include position(absolute,240px);
+        left: 50%;
+        margin-left: -600px;
+        .leftimg {
+            @include box(460px,608px,#e8ebf2);
+            padding: 20px;
+            @extend %flexbox;
+            float: left;
+          span {
+            @extend %span;
+            margin-top: 70px;
+          }
+          i {
+            @extend %i;
+          }
+        }
+  
+        .rightimg1,.rightimg2{
+            float: left;
+            @include box(350px,100%);
+        }
+        .rightimg1 div,.rightimg2 div{
+            @include box(350px,295px);
+            @extend %flexbox;
+            padding-top: 30px;
+        }
+        .rightimg1 div:nth-child(2){
+            background: #fbfbfb;
+        }
+        .rightimg2 div:nth-child(1){
+            background: #f1f2f6;
+        }
+        .rightimg1 span,.rightimg2 span{
+            margin-top: 10px;
+            @extend %span;
+        }
+        .rightimg1 i,.rightimg2 i{
+            @extend %i;
+        }
+      }
+    }
+  }
+
+ .newsWrap {
+    background: red;
+    height: 800px;
+    .news {
+        @include box($newwidth,100% ,blue );
+        margin: auto;
+    }
+  }
+
+.popularWrap {
+    height: 1647px;
+    .popular {
+        @include box($newwidth, 100% ,transparent);
+        margin: auto;
+        position: relative;
+      .bg {
+        @extend %bg;
+      }
+      h2 {
+        @extend %h2;
+        margin-bottom: 40px;
+        padding-top: 56px;
+        background: #f6f7f9;
+      }
+      ul {
+        @include box($newwidth, 40px,#f6f7f9);
+        margin: auto;
+        border-bottom: 1px solid #d8d8d8;
+        display: flex;
+        li {
+            @include box(200px,40px,#f6f7f9);
+            line-height: 40px;
+            text-align: center;
+            @include font(18px, normal, #444);
+        }
+      }
+      .images {
+        @include box($newwidth,540px,transparent);  
+        padding-top: 60px;
+        margin:auto;
+        display: flex;
+        justify-content: space-between;
+        div {
+            box-shadow: 0 3.2px 6.4px rgba(0, 0, 0, 0.12);
+            @include box(380px, 540px);
+            @extend %flexbox;
+        }
+        img{
+            width: 340px;
+        }
+        span{
+            @extend %span;
+            margin-top: 20px;
+        }
+        i{
+            @extend %i;
+        }
+        p{
+            @include box(178px, 50px);
+            line-height: 50px;
+            border: 1px solid #0c5ca8;
+            color: #0c5ca8;
+            text-align: center;
+            border-radius: 25px;
+            margin-top: 40px;
+        }
+      }
+  
+    .qwg {
+        @include box($newwidth, 580px);
+        margin: 100px auto 0px;
+        display: flex;
+        padding-top: 20px;
+        span {
+            @include font(36px, bolder);
+            line-height: 76px;
+            display: block;
+        }
+        i {
+            display: block;
+            line-height: 22px;
+            @include font(12px, normal,#444 );
+            margin-top: -21px;
+        }
+        .left span{
+            margin-top: 55px;
+        }
+        .left i{
+            width: 365px;
+        }
+        .right i{
+            width: 295px;
+            margin-left: 80px;
+        }
+        .right span{
+            margin-left: 80px;
+        }
+        .right img{
+            margin-top: 82px;
+        }
+        .right {
+            margin-left: -24px;
+            z-index: 1;
+        }
+      }
+    }
+  }
+
+.storyWrap {
+  height: 1537px;
+    .story {
+      @include box($newwidth, 100%);
+      margin: auto;
+      position: relative;
+      h2 {
+        @extend %h2;
+        margin-bottom: 40px;
+        padding-top: 56px;
+      }
+      p {
+        @include font(14px, normal, #444);
+        line-height: 24px;
+        text-align: center;
+      }
+      .bg {
+        @extend %bg;
+        top: 0px;
+      }
+    }
+  }
+
+.inforWrap {
+  height: 792px;
+    .infor {
+      @include box($newwidth, 100%, yellow);
+      margin: auto;
+      h2 {
+        @extend %h2;
+        margin-bottom: 40px;
+        padding-top: 56px;
+      }
+    }
+  }
+.linkWrap {
+  height: 503px;
+    div.link {
+      @include box($newwidth, 100%);
+      margin: auto;
+      h2 {
+        @extend %h2;
+        margin-bottom: 40px;
+        padding-top: 56px;
+      }
+      div.lianjie {
+        display: flex;
+        justify-content: space-between;
+        .top {
+          @include box(0, 0);
+          border-top: 45px solid #f8f8f8;
+          border-bottom: 45px solid #f8f8f8;
+          border-left: 80px solid #f8f8f8;
+          border-right: 80px solid #f8f8f8;
+          border-top-color: transparent;
+          border-left-color: transparent;
+          border-right-color: transparent;
+        }
+        .mid {
+          @include box( 160px, 90px, #f8f8f8);
+        }
+        .bottom {
+          @include box(0, 0);
+          border-top: 45px solid #f8f8f8;
+          border-bottom: 45px solid #f8f8f8;
+          border-left: 80px solid #f8f8f8;
+          border-right: 80px solid #f8f8f8;
+          border-bottom-color: transparent;
+          border-left-color: transparent;
+          border-right-color: transparent;
+        }
+      }
+    }
+  }
+
+@import "public";
+@import "nav";
+@import "bottom";
+@import "footer";

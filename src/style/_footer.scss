@@ -1,0 +1,25 @@
+.footerWrap {
+    width: 100%;
+      .footer {
+        @include box($newwidth, 57px, transparent);
+        margin: auto;
+        position: relative;
+        display: flex;
+        @include font(10px, normal, #494f5a);
+        .bg{
+          @extend %bg;
+          height: 57px;
+        }
+        a,i,strong{
+          display: inline-block;
+          padding: 0 10px;
+          @include font(10px, normal, #494f5a);
+          line-height: 57px;
+          text-align: center;
+        }
+        p{
+          margin-left: 30px;
+          margin-right: 50px;
+        }
+      }
+    }

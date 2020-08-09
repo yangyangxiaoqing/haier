@@ -1,0 +1,177 @@
+@charset "utf-8";
+//小的宽度
+$newwidth: 1200px;
+//大的宽度
+$width: 1680px;
+$maincol: #005aaa;
+
+@import "public";
+
+@mixin box($width: 100%, $height: 100%, $background: #fff) {
+  width: $width;
+  height: $height;
+  background: $background;
+}
+@mixin font($fs: 16px, $fw: normal, $c: #000) {
+  font-size: $fs;
+  font-weight: $fw;
+  color: $c;
+}
+@mixin position($pos: relative, $t: 0px) {
+  position: $pos;
+  top: $t;
+}
+
+%flexbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+%h2 {
+  height: 40px;
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: bolder;
+  color: #000;
+  text-align: center;
+}
+%bg {
+  width: 1680px;
+  height: 540px;
+  background: #f6f7f9;
+  position: absolute;
+  left: -240px;
+  z-index: -1;
+}
+%span {
+  font-size: 18px;
+  line-height: 18px;
+  height: 18px;
+  color: #000;
+}
+%i {
+  font-size: 14px;
+  line-height: 14px;
+  height: 14px;
+  color: #555555;
+  margin-top: 15px;
+}
+
+.headerWrap {
+  @include box(100%, 60px);
+  .header {
+    @include box(1200px, 60px);
+    margin: auto;
+    
+    display: flex;
+    @include font( 14px, normal, #333333);
+    .logo {
+        line-height: 60px;
+        @include box(120px,60px);
+        display: flex;
+        align-items: center;
+          img {
+            @include box(70px,20px);
+          }
+      }
+    .login{
+        line-height: 60px;
+    }
+    .register {
+        margin-left: 650px;
+        @include box( 130px, 16px);
+        border-right: 1px solid #e5e5e5;
+        text-align: center;
+        margin-top: 22px;
+    }
+    .activate {
+        @include box( 195px, 16px);
+        text-align: center;
+        margin-top: 22px;
+    }
+  }
+}
+
+.bannerWrap {
+  @include box( 100%, 787px);
+  .banner {
+    @include box($newwidth, 787px);
+    margin: auto;
+    position: relative;
+    .bg {
+      @include box(1680px, 787px);
+      position: absolute;
+      top: 0;
+      left: -240px;
+      background: url(https://user.haier.com/cn/images/vipuser_denglubg3.jpg) no-repeat center center;
+    }
+    .mainbox {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      @include box(420px, 450px);
+      .title {
+        @include box(390px, 60px);
+        line-height: 60px;
+        padding-left: 30px;
+        @include font(16px, normal, #333333);
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .fail{
+        position: absolute;
+        top: 155px;
+        left: -408px;
+        @include box(380px, 50px, #666);
+        color: #fff;
+        line-height: 50px;
+        padding-left: 20px;
+        display: none;
+      }
+      
+
+      ul {
+        @include box( 100%, 90px);
+        display: flex;
+        line-height: 90px;
+        li {
+          padding: 0 30px;
+        }
+      }
+      label{
+        @include box(390px, 60px);
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+      }
+      .tel,.pass{
+        @include box(338px, 48px);
+        border: 1px solid #d6dbdd;
+        padding-left: 20px;
+        // margin-bottom: 15px;
+        @include font( 12px, normal, #999999);
+      }
+      .agree,.checklog{
+        display: inline-block;
+        margin-left: 30px;
+        margin-right: 18px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        @include box(20px, 20px);
+        border: 1px solid #d6dbdd;
+        // margin-bottom: 15px;
+        @include font( 12px, normal, #999999);
+      }
+      .btn{
+        @include box(358px, 48px);
+        background: #c6cacb;
+        color: #fff;
+        
+      }
+    }
+  }
+}
+@import "footer";
+.footerWrap{
+  background-color: black;
+}
